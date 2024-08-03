@@ -12,12 +12,12 @@ public class 차_집단 {
         for(int i=0;i<position.length;i++){
             pairs[i]=new pair(position[i],speed[i]);
         }
-        Arrays.sort(pairs, (o1, o2) -> o2.position-o1.position);
+        Arrays.sort(pairs, (o1, o2) -> o2.position-o1.position);// 내림 차순으로 정렬..
 
         int answer=0;
-        double curtime=0;
+        double curtime=0; // 도착 시간이 가장 긴부분
         for(int i=0;i<pairs.length;i++){
-            double landtime= (double) (target- pairs[i].position) / pairs[i].speed;
+            double landtime= (double) (target- pairs[i].position) / pairs[i].speed;  // 도착시간.
             if(curtime < landtime){
                 answer++;
                 curtime= landtime;

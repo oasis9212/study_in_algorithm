@@ -14,7 +14,7 @@ public class 땅따먹기 {
             for (int k = 0; k < land[i].length; k++) {
                 changeLand[k] = maxVal(land[i][k], answerLand, k);  // 0번 -> 1번째 배열로 건너 뛰면서 1번째 배열중에서 가장 큰 값을 가질수 있는 값을 선택.
             }
-            answerLand = changeLand;
+            answerLand = changeLand;  // 0번 -> 1번으로 이동하면서 제일 큰값으로 선택.
 
         }
 
@@ -28,12 +28,12 @@ public class 땅따먹기 {
         int findVal = 0;
 
         for (int i = 0; i < answerLand.length; i++) {
-            if (loc == i) {
+            if (loc == i) { // 같은 칸을 제외하고 제일 큰 숫자를 찾는다.
                 continue;
             }
             findVal = Math.max(findVal, answerLand[i]);
         }
 
-        return currentVal + findVal;
+        return currentVal + findVal;  // 이전 배열의 제일 큰숫자(자기 자신 칸 제외)+ 현재 칸
     }
 }
