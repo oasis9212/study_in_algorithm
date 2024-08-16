@@ -12,13 +12,13 @@ public class 말_다이얼 {
         long[] arr = new long[10];
         for (int i = 0; i <= 9; i++) {
             arr[i] = 1;
-        }
+        }  // 만약 한번만 이동한다면.
         for (int i = 2; i <= n; i++) {
             long[] temp = new long[10];
-            temp[0] = (arr[4] + arr[6]) % MOD;
-            temp[1] = (arr[6] + arr[8]) % MOD;
-            temp[2] = (arr[7] + arr[9]) % MOD;
-            temp[3] = (arr[4] + arr[8]) % MOD;
+            temp[0] = (arr[4] + arr[6]) % MOD;  // 0 -> 4,6
+            temp[1] = (arr[6] + arr[8]) % MOD;  // 1-> 6,8
+            temp[2] = (arr[7] + arr[9]) % MOD;  // 2- > 7,9
+            temp[3] = (arr[4] + arr[8]) % MOD;  //
             temp[4] = (arr[3] + arr[9] + arr[0]) % MOD;
             temp[5] = 0;
             temp[6] = (arr[7] + arr[1] + arr[0]) % MOD;

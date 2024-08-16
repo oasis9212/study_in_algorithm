@@ -10,8 +10,8 @@ public class 구명보트 {
         Arrays.sort(people);  // 우선 정렬 오름 차순.
         // 최악은 사람의 길이만큼 타야한다.
         // 무개 제일 많이 나가는 사람 + 제일 적게 나가는 사람 >= limit
-        int little = 0;
-        int big = people.length - 1;
+        int little = 0;  // 인덱스  작은.
+        int big = people.length - 1;  // 인덱스  몸무게 큰것
         while (big > little) {
             if (people[big] + people[little] <= limit) {
                 little++;
