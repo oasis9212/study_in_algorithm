@@ -15,7 +15,6 @@ public class 개구리_점프 {
 
         System.out.println(answer);
 
-
         //
         int answer2=stones[1]-stones[0];
         for (int i = 2; i < stones.length; i++) {
