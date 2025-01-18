@@ -2,7 +2,9 @@ package stu_20241214;
 
 public class leetcode_861 {
     public static void main(String[] args) {
-        int[][] grid = {{0, 0, 1, 1}, {1, 0, 1, 0}, {1, 1, 0, 0}};
+        int[][] grid = {{0, 1, 1, 1}
+                ,       {0, 1, 1, 1}
+                ,       {0, 1, 1, 1}};
         System.out.println(leetcode_861_sol(grid));
 
 

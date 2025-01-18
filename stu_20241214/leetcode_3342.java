@@ -8,6 +8,8 @@ public class leetcode_3342 {
     public static void main(String[] args) {
 //        System.out.println(leetcode_3342_sol(new int[][]{{0,1},{1,2}}));
         System.out.println(leetcode_3342_sol(new int[][]{{25,44},{4,2}}));
+
+
 //        System.out.println(leetcode_3342_sol(new int[][]{{0,0,0,0},{0,0,0,0}}));
         //       System.out.println(leetcode_3342_sol(new int[][]{{0,43,20},{94,88,56},{23,21,22}}));
         System.out.println(leetcode_3342_sol(new int[][]{{38, 87, 68, 34, 32, 8}
@@ -18,18 +20,19 @@ public class leetcode_3342 {
 
     private static int leetcode_3342_sol(int[][] moveTime) {
         int[][] minTime = new int[moveTime.length][moveTime[0].length];
-        boolean[][] visited = new boolean[moveTime.length][moveTime[0].length];
         for (int[] row : minTime) {
             Arrays.fill(row, Integer.MAX_VALUE);
         }
 
+        boolean[][] visited = new boolean[moveTime.length][moveTime[0].length];
+
         Queue<int[]> queue = new LinkedList<>();
-        queue.add(new int[]{0, 0, 1});
+        queue.add(new int[]{0, 0, 1});   // x , y  ,1/2
         minTime[0][0] = 0;
 
         int[] dy = {-1, 1, 0, 0};
         int[] dx = {0, 0, -1, 1};
-
+        // 좌우 상하
         while (!queue.isEmpty()) {
             int[] cur = queue.poll();
             int y = cur[0];
@@ -45,15 +48,13 @@ public class leetcode_3342 {
                 if (ny < 0 || ny >= moveTime.length || nx < 0 || nx >= moveTime[0].length) continue;
 
 
+                //                        다음갈장소의값      지금 위치값
                 int stepTime = Math.max(moveTime[ny][nx],minTime[y][x]) +OneTwo;
-
-
-
-                if (!visited[ny][nx]) {
+                if (!visited[ny][nx]) {  // 방문을 안했을때 무조건 맥스 값
                     minTime[ny][nx] = stepTime;
                     visited[ny][nx]=true;
                     queue.add(new int[]{ny, nx, OneTwo == 1 ? 2 : 1});
-                }else if(visited[ny][nx] && stepTime< minTime[ny][nx]){
+                }else if(stepTime< minTime[ny][nx]){
                     minTime[ny][nx] = stepTime;
                     queue.add(new int[]{ny, nx, OneTwo == 1 ? 2 : 1});
                 }
