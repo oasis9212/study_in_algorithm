@@ -43,14 +43,14 @@ public class leetcode_2400 {
             num = (num * (k - i)) % INF;
             den = (den * (i + 1)) % INF;
         }
-     /*
-     *  다음식은 모듈러 함수를 사용한다.
-     *  모듈러 함수는 다음과 같은 효과를 보여주는데
-     *  곱샘을 할시에 나눗셈을 하는 효과를 나타낸다. 자세한건. 깃.
-     * */
+        /*
+         *  다음식은 모듈러 함수를 사용한다.
+         *  모듈러 함수는 다음과 같은 효과를 보여주는데
+         *  곱샘을 할경우에 나눗셈을 하는 효과를 나타낸다. 자세한건. 깃.
+         * */
 
 
-        return  (int)((num * modInverse(den,INF) % INF));
+        return (int) ((num * modInverse(den, INF) % INF));
     }
 
     private static long modInverse(long den, int inf) {
