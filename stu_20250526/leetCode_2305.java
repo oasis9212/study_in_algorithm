@@ -29,7 +29,7 @@ public class leetCode_2305 {
             }
         }
 
-        dp[0][0] = 0;
+
 
         // 점화식
         for (int i = 1; i <= n; i++) {
