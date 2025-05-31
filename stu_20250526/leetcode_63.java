@@ -1,7 +1,9 @@
 package stu_20250526;
 
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Set;
 
 
 public class leetcode_63 {
@@ -18,19 +20,25 @@ public class leetcode_63 {
         Queue<int[]> loc = new LinkedList<>();
         loc.add(new int[]{0, 0});
 
-
+        Set<String> set= new HashSet<>();
+        set.add("00");
         while (!loc.isEmpty()) {
 
             int[] l = loc.poll();
             int selo = l[0];
             int galo = l[1];
+
             if (selo < obstacleGrid.length-1 && obstacleGrid[selo + 1][galo] == 0) {
                 pathcase[selo + 1][galo] += pathcase[selo][galo];
-                loc.add(new int[]{selo + 1, galo});
+                if(set.add((selo+1)+""+galo)){
+                    loc.add(new int[]{selo + 1, galo});
+                }
             }
             if (galo < obstacleGrid[0].length-1 && obstacleGrid[selo][galo + 1] == 0  ) {
                 pathcase[selo][galo + 1] += pathcase[selo][galo];
-                loc.add(new int[]{selo, galo + 1});
+                if(set.add((selo)+""+(galo+1))) {
+                    loc.add(new int[]{selo, galo + 1});
+                }
             }
 
 
