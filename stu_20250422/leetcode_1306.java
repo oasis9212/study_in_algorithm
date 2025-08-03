@@ -4,8 +4,8 @@ public class leetcode_1306 {
 
     public static void main(String[] args) {
         System.out.println(sol_1306(new int[]{4, 2, 3, 0, 3, 1, 2}, 5));
-        System.out.println(sol_1306(new int[]{3,0,2,1,2}, 2));
-        System.out.println(sol_1306(new int[]{4,2,3,0,3,1,2}, 0));
+        System.out.println(sol_1306(new int[]{3, 0, 2, 1, 2}, 2));
+        System.out.println(sol_1306(new int[]{4, 2, 3, 0, 3, 1, 2}, 0));
 
     }
 
@@ -19,7 +19,7 @@ public class leetcode_1306 {
 
     private static boolean goBFS(boolean[] tf, int[] arr, int idx) {
 
-        if(idx<0 || idx>= arr.length) {  // 점프하는데 배열을 초과할경우
+        if (idx < 0 || idx >= arr.length) {  // 점프하는데 배열을 초과할경우
             return false;
         }
         if (tf[idx] && arr[idx] != 0) { // 점프했는데 이미간곳인데 0 값도 아닌곳이면

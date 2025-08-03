@@ -7,17 +7,17 @@ public class 기지국_설치 {
 
     public static void main(String[] args) {
 
-   //     System.out.println(sol_기지국(11  , new int[]{4, 11},  1));  //3
-     //   System.out.println(sol_기지국(16  , new int[]{9},  2));      //3
+        System.out.println(sol_기지국(11  , new int[]{4, 11},  1));  //3
+        System.out.println(sol_기지국(16  , new int[]{9},  2));      //3
         System.out.println(sol_기지국(16  , new int[]{9},  2));  //4
-//        System.out.println(sol_기지국(5  , new int[]{3},  2));           //0
-//        System.out.println(sol_기지국(6  , new int[]{3},  2));           //1
-//        System.out.println(sol_기지국(16  , new int[]{1,16},  2));  // 2
-//        System.out.println(sol_기지국(6  , new int[]{4},  2));           // 1
-//        System.out.println(sol_기지국(11  , new int[]{1,4},  1));           // 2
-//        System.out.println(sol_기지국(11  , new int[]{1,5},  1));           // 3
-//        System.out.println(sol_기지국(5  , new int[]{1,2,3,4,5},  1));           // 0
-//        System.out.println(sol_기지국(200000000   , new int[]{100000000},  5));           // 0
+        System.out.println(sol_기지국(5  , new int[]{3},  2));           //0
+        System.out.println(sol_기지국(6  , new int[]{3},  2));           //1
+        System.out.println(sol_기지국(16  , new int[]{1,16},  2));  // 2
+        System.out.println(sol_기지국(6  , new int[]{4},  2));           // 1
+        System.out.println(sol_기지국(11  , new int[]{1,4},  1));           // 2
+        System.out.println(sol_기지국(11  , new int[]{1,5},  1));           // 3
+        System.out.println(sol_기지국(5  , new int[]{1,2,3,4,5},  1));           // 0
+        System.out.println(sol_기지국(200000000   , new int[]{100000000},  5));           // 0
 
 
     }
@@ -39,9 +39,7 @@ public class 기지국_설치 {
                     minstations++;
                 }else{
                     minstations+=((stations[i] + w)-setuploc) / range ;
-                    if(((stations[i] + w)-setuploc) % range >0){
-                        minstations++;
-                    }
+                    minstations++;
                 }
             }
             setuploc=stations[i] + w ;  // 주파수 영향도 범위

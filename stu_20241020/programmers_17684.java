@@ -13,7 +13,7 @@ public class programmers_17684 {
         } // 알파벳 넣기
         int msglen=msg.length();
         int cur =0;
-        int inc=1;
+        int inc=1;  // map 에해당 string 있다면 ++ 시키고 없다면 1 로 초기화를 시킨다. 
         int insert=0;
 
         while (cur<msglen){

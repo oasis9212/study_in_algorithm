@@ -8,10 +8,10 @@ public class leetcode_139 {
     public static void main(String[] args) {
         String[] word = new String[]{"leet", "code"};
         List<String> s = new ArrayList<>(List.of(word));
-        System.out.println(sol_139("leetcode", s));
-        word = new String[]{"aaaa","aa"};
-        s = new ArrayList<>(List.of(word));
-        System.out.println(sol_139("aaaaaaa", s));
+//        System.out.println(sol_139("leetcode", s));
+//        word = new String[]{"aaaa","aa"};
+//        s = new ArrayList<>(List.of(word));
+//        System.out.println(sol_139("aaaaaaa", s));
         word = new String[]{"aaaa","aaa"};
         s = new ArrayList<>(List.of(word));
         System.out.println(sol_139("aaaaaaa", s));
@@ -25,26 +25,26 @@ public class leetcode_139 {
         for (int i = 0; i < wordDict.size(); i++) {
             td.insert(wordDict.get(i));
         }
-        Boolean[] memo= new Boolean[s.length()];
-        return dfs_139(s,0,td.root,td,memo);
+        Boolean[] memo = new Boolean[s.length()];
+        return dfs_139(s, 0, td.root, td, memo);
     }
 
     private static boolean dfs_139(String s, int start, Trie_139_Node root, Trie trie, Boolean[] memo) {
-        if(start == s.length())return true;
+        if (start == s.length()) return true;  // 끝까지 가면 사용가능
         if (memo[start] != null) return memo[start];
-        Trie_139_Node node= root;
+        Trie_139_Node node = root;
 
-        for(int i=start ;i< s.length() ;i++){
-            char c= s.charAt(i);
-            if(!node.child.containsKey(c)) break;
+        for (int i = start; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (!node.child.containsKey(c)) break;
 
             node = node.child.get(c);
-            if(node.endWord && dfs_139(s,i+1,root,trie,memo)){
+            if (node.endWord && dfs_139(s, i + 1, root, trie, memo)) {
                 return memo[start] = true;
             }
 
         }
-        return memo[start]= false;
+        return memo[start] = false;  //
     }
 }
 

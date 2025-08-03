@@ -26,7 +26,7 @@ public class between_Zero {
 
         }
 
-        System.out.println("asd");
+
     }
 
     static ListNode createNode(int[] nums) {

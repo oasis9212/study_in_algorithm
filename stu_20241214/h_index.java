@@ -6,15 +6,18 @@ public class h_index {
     public static void main(String[] args) {
 
         System.out.println(h_index_sol(new int[]{3, 0, 6, 1, 5}));
-    }
-
+    }       // 0, 1 , 3 , 5, 6
+            // 0 > 5
+            // 1 > 4
+            // 3 <= 3  리턴
+            // 5 < 2
     private static int h_index_sol(int[] citations) {
 
-        Arrays.sort(citations);
+        Arrays.sort(citations);  // 정렬
         int len= citations.length;
         int idx=0;
         int result=0;
-        while(citations.length>idx){
+        while(citations.length>idx){  // 0-> 인덱스 끝까지
             if(citations[idx] >= len-idx){
                 result=len-idx;
                 break;
