@@ -7,14 +7,14 @@ public class leetcode_1190 {
         // System.out.println(sol_1190("(u(love)i)"));
         System.out.println(sol_1190("(ed(et(oc))el)"));
     }
-
+   
 
     private static String sol_1190(String s) {
 
         Stack<Character> st = new Stack<>();
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == ')') {
-                StringBuffer sb = new StringBuffer();
+                StringBuffer sb = new StringBuffer(); // 우선
                 while (st.peek() != '(') {
                     sb.append(st.pop());
                 }
