@@ -15,8 +15,8 @@ public class leetcode_3191 {
                     return -1;
                 }
                 nums[zeroIdx] = 1;
-                nums[zeroIdx + 1] ^= 1;
-                nums[zeroIdx + 2] ^= 1;
+                nums[zeroIdx + 1] ^= 1;  // XOR
+                nums[zeroIdx + 2] ^= 1;  // XOR
                 count++;
             }
             zeroIdx++;
