@@ -41,7 +41,7 @@ public class leetcode_1631 {
                 return effort;
             }
 
-            // 이미 더 좋은 경로가 있으면 스킵
+
             if (effort > dist[r][c]) continue;
 
             for (int i = 0; i < 4; i++) {
