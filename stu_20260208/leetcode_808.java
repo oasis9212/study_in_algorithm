@@ -41,7 +41,10 @@ public class leetcode_808 {
             }
         }
         // DP 에 대한 정의가 무조건 1차원으로 생각하지말고 2차원으로 생각해야할 요소가 있다.
-        System.out.println(Arrays.deepToString(ary));
+        for (int i = 0; i < ary.length; i++) {
+            System.out.println((Arrays.toString(ary[i])));
+        }
+
         return ary[ary.length-1][ary.length-1];
     }
 }
