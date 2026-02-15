@@ -1,6 +1,7 @@
 package stu_20260208;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class leetcode_808 {
@@ -40,7 +41,7 @@ public class leetcode_808 {
             }
         }
         // DP 에 대한 정의가 무조건 1차원으로 생각하지말고 2차원으로 생각해야할 요소가 있다.
-
+        System.out.println(Arrays.deepToString(ary));
         return ary[ary.length-1][ary.length-1];
     }
 }
